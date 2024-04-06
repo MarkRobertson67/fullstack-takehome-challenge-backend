@@ -1,0 +1,13 @@
+Requirement:
+Build the backend API endpoint
+POST /api/raffles/:id/participants
+
+Set up Express API - create new route to handle POST requests to /api/raffles/:id/participants
+Set up database with schema and seed files with paticipants table
+Create happy path handler and db query for /:id/participants to insert data and return 200 and return the data that was inserted into the db.
+When a raffle has participants
+When a raffle has no participants yet
+Sad path: return 404 if raffle with requested id is not found
+Sad path: return 400 if id is not a positive int
+Sad path: catch and handle server errors
+
