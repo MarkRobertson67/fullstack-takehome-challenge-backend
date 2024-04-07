@@ -2,6 +2,11 @@
 const { Router } = require("express");
 const {
   getAllraffles,
+  getRafflesBtId,
+  getParticipantsByRaffleId,
+  createraffle,
+  Deleteraffle
+  
 } = require("../queries/rafflesQueries");
 
 const rafflesController = Router();
@@ -16,7 +21,6 @@ const rafflesController = Router();
     response.status(500).json({ error: err.message });
   }
 });
-
 
 
 module.exports = rafflesController;
