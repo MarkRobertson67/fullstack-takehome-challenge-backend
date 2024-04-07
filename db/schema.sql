@@ -7,7 +7,8 @@ DROP TABLE IF EXISTS raffles;
 CREATE TABLE raffles (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    secret_token VARCHAR(255) NOT NULL UNIQUE -- Ensure secret_token is unique
+    secret_token VARCHAR(255) NOT NULL UNIQUE,
+    winner_id INTEGER
 );
 
 -- Create 'participants' table

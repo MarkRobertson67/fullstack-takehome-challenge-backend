@@ -1,8 +1,9 @@
 
 const { Router } = require("express");
+
 const {
   getAllparticipants,
-  getParticipantById
+  getParticipantById,
 } = require("../queries/participantsQueries");
 
 // Import middleware functions
@@ -18,8 +19,8 @@ const participantsController = Router();
 // GET all participants
     participantsController.get("/", async (request, response) => {
   try {
-    const participants = await getAllparticipants();
-    response.status(200).json({ data: participants });
+    const participant = await getAllparticipants();
+    response.status(200).json({ data: participant });
   } catch (err) {
     response.status(500).json({ error: err.message });
   }
@@ -32,7 +33,8 @@ participantsController.get(
   validateParticipantExistsMiddleware,
   async (request, response) => {
     try {
-      const { participant } = request; // from middleware
+      const { id } = request.params;
+      const  participant  = await getParticipantById(id);
       response.status(200).json({ data: participant });
     } catch (err) {
       response.status(500).json({ error: err.message });

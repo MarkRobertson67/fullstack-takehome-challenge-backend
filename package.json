@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "db:setup": "psql $DATABASE_URL -f db/schema.sql && psql $DATABASE_URL -f db/seed.sql",
+    "db:setup": "psql $DB_URL -f db/schema.sql && psql $DB_URL -f db/seed.sql",
     "db:shutdown": "pg_ctl -D \"../../Library/Application Support/Postgres/var-15\" stop",
     "db:start": "pg_ctl -D \"../../Library/Application Support/Postgres/var-15\" start"
   },
