@@ -17,22 +17,14 @@ The overall goal is to create a scalable and maintainable backend solution that 
   - [Set Up Environment Variables](#set-up-environment-variables)
   - [Database Configuration](#database-configuration)
   - [Start the Server](#start-the-server)
-- [Usage](#usage)
-  - [Endpoints](#endpoints)
-- [Contributing](#contributing)
-- [License](#license)
 
-## Prerequisites
 
-- Node.js and npm (Node Package Manager)
-- PostgreSQL (or another supported database)
 
 ## Getting Started
 
 ### Clone the Repository
 
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+git clone the repo to your machine
 
 ## Install Dependencies
 
@@ -68,37 +60,3 @@ Start the backend server by running the following command:
 
 npm start
 The server should now be running locally on the specified port (e.g., http://localhost:2020).
-
-## Usage
-Provide information on how to use the backend endpoints and any additional functionality. Include example API requests and responses
-
-## Endpoints
-GET /raffles: Get all raffles.
-
-Example Request:
-
-curl http://localhost:2020/raffles
-Example Response:
-
-json
-Copy code
-{
-  "data": [
-    {
-      "id": 1,
-      "name": "Raffle 1",
-      "description": "Description of Raffle 1"
-    },
-    {
-      "id": 2,
-      "name": "Raffle 2",
-      "description": "Description of Raffle 2"
-    }
-  ]
-}
-
-## Contributing
-Provide instructions for contributing to the project (e.g., how to submit bug reports or pull requests).
-
-## License
-Specify the project's license (e.g., MIT License).
