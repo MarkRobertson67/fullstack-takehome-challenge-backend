@@ -1,5 +1,7 @@
 
-const { getRafflesbyId } = require("../queries/rafflesQueries");
+const { getRaffleById } = require("../queries/rafflesQueries");
+const { getParticipantById } = require("../queries/participantsQueries");
+
 
 
 
