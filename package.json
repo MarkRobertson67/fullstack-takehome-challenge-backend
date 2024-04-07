@@ -9,7 +9,7 @@
     "db:setup": "psql $DATABASE_URL -f db/schema.sql && psql $DATABASE_URL -f db/seed.sql",
     "db:shutdown": "pg_ctl -D \"../../Library/Application Support/Postgres/var-15\" stop",
     "db:start": "pg_ctl -D \"../../Library/Application Support/Postgres/var-15\" start"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +21,6 @@
     "http-proxy-middleware": "^2.0.6",
     "nodemon": "^3.0.1",
     "pg": "^8.11.0",
-    "pg-promise": "^11.5.3"
+    "pg-promise": "^11.6.0"
   }
 }
