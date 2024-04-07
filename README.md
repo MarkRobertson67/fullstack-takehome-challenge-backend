@@ -1,4 +1,4 @@
-# fullstack-takehome-challenge-backend
+# Raffles-backend
 
 ## Brief project description.
 
@@ -10,7 +10,6 @@ The overall goal is to create a scalable and maintainable backend solution that 
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Clone the Repository](#clone-the-repository)
   - [Install Dependencies](#install-dependencies)
