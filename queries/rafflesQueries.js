@@ -21,11 +21,16 @@ const getRaffleById = async (id) => {
 
 const createRaffle = async (name, secret_token) => {
     try {
-        const newRaffle = await db.one(
-            "INSERT INTO raffles (name, secret_token, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
-            [name, secret_token]
-        );
-        return newRaffle;
+        // Check if name and secret_token are provided (not null or undefined)
+        if (name && secret_token) {
+            const newRaffle = await db.one(
+                "INSERT INTO raffles (name, secret_token, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
+                [name, secret_token]
+            );
+            return newRaffle;
+        } else {
+            throw new Error("Name and secret_token are required");
+        }
     } catch (error) {
         throw new Error(`Error creating new raffle: ${error.message}`);
     }
@@ -90,12 +95,17 @@ const pickWinnerForRaffle = async (raffleId, secret_token) => {
         // Get the randomly selected winner (participant) based on the random index
         const winner = participants[randomIndex];
 
+        if (!winner) {
+            throw new Error(`There is no winner for the raffle with ID ${raffleId}`)
+        }
+
+
         // Update the raffle record with the winner's ID and end_at date
-        await db.none("UPDATE raffles SET winner_id = $1, end_at = CURRENT_TIMESTAMP WHERE id = $2",  
-        [
-            winner.id,
-            raffleId
-        ]);
+        await db.none("UPDATE raffles SET winner_id = $1, end_at = CURRENT_TIMESTAMP WHERE id = $2",
+            [
+                winner.id,
+                raffleId
+            ]);
 
         return winner; // Return the selected winner
     } catch (error) {
