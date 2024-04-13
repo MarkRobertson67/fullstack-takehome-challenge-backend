@@ -22,7 +22,7 @@ const getRaffleById = async (id) => {
 const createRaffle = async (name, secret_token) => {
     try {
         const newRaffle = await db.one(
-            "INSERT INTO raffles (name, secret_token) VALUES ($1, $2) RETURNING *",
+            "INSERT INTO raffles (name, secret_token, created_at) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
             [name, secret_token]
         );
         return newRaffle;
@@ -90,10 +90,11 @@ const pickWinnerForRaffle = async (raffleId, secret_token) => {
         // Get the randomly selected winner (participant) based on the random index
         const winner = participants[randomIndex];
 
-        // Update the raffle record with the winner's ID
-        await db.none("UPDATE raffles SET winner_id = $1 WHERE id = $2", [
+        // Update the raffle record with the winner's ID and end_at date
+        await db.none("UPDATE raffles SET winner_id = $1, end_at = CURRENT_TIMESTAMP WHERE id = $2",  
+        [
             winner.id,
-            raffleId,
+            raffleId
         ]);
 
         return winner; // Return the selected winner
