@@ -11,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 //Controllers
 app.use("/raffles", rafflesController);
 app.use("/participants", participantsController);

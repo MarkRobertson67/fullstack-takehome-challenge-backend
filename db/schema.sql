@@ -8,8 +8,11 @@ CREATE TABLE raffles (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     secret_token VARCHAR(255) NOT NULL UNIQUE,
-    winner_id INTEGER
+    winner_id INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    end_at TIMESTAMP
 );
+
 
 -- Create 'participants' table
 CREATE TABLE participants (
