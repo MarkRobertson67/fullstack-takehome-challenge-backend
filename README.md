@@ -51,7 +51,7 @@ Create a .env file in the root directory of your project to store environment va
 Example .env file:
 
 PORT=2020
-DB_URL=<insert_your_elephantsql_url_here>
+`DB_URL=<insert_your_elephantsql_url_here>`
 
 Replace <insert_your_elephantsql_url_here> with your ElephantSQL database connection URL obtained during the signup process.
 
@@ -75,7 +75,7 @@ Start the backend server by running the following command:
 
 npm start
 
-The server should now be running locally on the specified port (e.g., http://localhost:2020).
+The server should now be running locally on the specified port (e.g., `http://localhost:2020`).
 
 
 ## API Endpoints
@@ -87,7 +87,8 @@ Use API endpoints to interact with the application:
 
 Example Request:
 
-http://localhost:2020/raffles
+`http://localhost:2020/raffles`
+
 
 Example Response:
 
@@ -116,3 +117,33 @@ Example Response:
 }
 ```
 
+Example Request:
+
+`http://localhost:2020/participants`
+
+Example Response:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "raffle_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "raffle_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "raffle_id": 2
+    }
+  ]
+}
+```
