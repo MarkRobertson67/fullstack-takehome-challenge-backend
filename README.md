@@ -30,7 +30,7 @@ Ensure you have the following prerequisites installed on your machine:
 
 - **Node.js and npm:** Download and install from [nodejs.org](https://nodejs.org).
 - **ElephantSQL Database:** Sign up and create a database at [ElephantSQL](https://www.elephantsql.com) to obtain your database connection URL.
-Follow the instructions to set up the ElephantSQL database [here](https://docs.google.com/document/d/1XJq1FzFShWGnDTuVfvdtjQxH8IY3v-6jtBHjMK5_-7A/edit?usp=sharing).
+- **Follow the instructions to set up the ElephantSQL database [here](https://docs.google.com/document/d/1XJq1FzFShWGnDTuVfvdtjQxH8IY3v-6jtBHjMK5_-7A/edit?usp=sharing).
 
 
 ### Clone the Repository
@@ -88,8 +88,10 @@ Use API endpoints to interact with the application:
 Example Request:
 
 http://localhost:2020/raffles
+
 Example Response:
 
+```json
 {
   "data": [
     {
@@ -112,5 +114,5 @@ Example Response:
     }
   ]
 }
-
+```
 
