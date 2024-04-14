@@ -3,7 +3,7 @@ const db = require("../db/dbConfig");
 
 const getAllRaffles = async () => {
     try {
-        return await db.any("SELECT * FROM raffles");
+        return await db.any("SELECT * FROM raffles ORDER BY id ASC");
     } catch (error) {
         throw new Error(`Error retrieving all raffles: ${error.message}`);
     }
