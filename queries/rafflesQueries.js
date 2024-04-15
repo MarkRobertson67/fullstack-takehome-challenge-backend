@@ -127,13 +127,12 @@ const getWinnerOfRaffle = async (raffleId) => {
         if (winner) {
             return winner;
         } else {
-            throw new Error(`Winner not found for raffle with ID ${raffleId}`);
+            return { message: `No winner found for raffle with ID ${raffleId}` };
         }
     } catch (error) {
         throw new Error(`Error fetching winner of raffle: ${error.message}`);
     }
 };
-
 
 
 module.exports = {
